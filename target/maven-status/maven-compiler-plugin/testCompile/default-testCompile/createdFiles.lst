@@ -1,4 +1,7 @@
 pages\GoogleHomePage.class
-steps\SearchSteps.class
 steps\SearchStepDefinitions.class
+steps\webshopGlue.class
+steps\webshopSteps.class
 runners\CucumberTestSuite.class
+steps\SearchSteps.class
+pages\Webshop\Webshop.class
