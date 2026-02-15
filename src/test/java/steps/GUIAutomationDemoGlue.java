@@ -1,10 +1,14 @@
 package steps;
 
 
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.GUIAutomationDemoPage;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 
 public class GUIAutomationDemoGlue {
 
@@ -20,14 +24,18 @@ public class GUIAutomationDemoGlue {
     public void the_user_clicks_on_check_online_button_to_assert_the_subsequent_page_opens() {
         GUIAutomationDemo.click_online_Button();
     }
-    @When("User clicks on Yes and enter a vehicle amount and click the calculate button")
-    public void user_clicks_on_yes_and_enter_a_vehicle_amount_and_click_the_calculate_button() throws InterruptedException {
-        GUIAutomationDemo.revenue();
-    }
+
     @When("User Assert the contents of the popup window")
-    public void user_assert_the_contents_of_the_popup_window() throws InterruptedException {
+    public void user_assert_the_contents_of_the_popup_window()  {
 
-        GUIAutomationDemo.calulationWindow();
+        GUIAutomationDemo.validateWindow();
+        assertTrue(GUIAutomationDemo.vehicleRegistraion());
+        assertEquals(GUIAutomationDemo.fetch_Amount(),GUIAutomationDemo.passedValue);
+    }
 
+    @When("User clicks on Yes and enter a vehicle amount as {string} and click the calculate button")
+    public void userClicksOnYesAndEnterAVehicleAmountAsAndClickTheCalculateButton(String value) {
+        assertTrue(GUIAutomationDemo.validateCalculatorPage());
+        GUIAutomationDemo.revenue(value);
     }
 }

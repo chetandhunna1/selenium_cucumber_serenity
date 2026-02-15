@@ -2,10 +2,10 @@ package pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
-import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.PageFactory;
+
+import javax.swing.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -32,11 +32,11 @@ public class GUIAutomationDemoPage extends PageObject {
     WebElement Calculation_Header;
 
     @FindBy(xpath = "//table//tr[td[normalize-space()='Is this registration for a passenger vehicle?']]//td[2]")
-    WebElement Yes_displayed;
+    WebElement registrationStatus;
 
     @FindBy(xpath = "//table//tr[td[normalize-space()='Purchase price or value']]//td[2]")
     WebElement Entered_Value;
-
+    public String passedValue ="";
 
     public void openUrl() throws InterruptedException {
         openUrl(url);
@@ -46,24 +46,38 @@ public class GUIAutomationDemoPage extends PageObject {
         waitFor(Check_online).waitUntilVisible();
         Check_online.click();
     }
-    public void revenue() throws InterruptedException {
+
+    public boolean validateCalculatorPage(){
         waitFor(Revenue_NSW_calculators).waitUntilVisible();
+        if(Revenue_NSW_calculators.isDisplayed())
+            return true;
+        else return false;
+    }
+    public void revenue(String amt)  {
+        passedValue = amt;
         RadioButton_Yes.click();
-        Purchase_Price.sendKeys("45000");
-        Thread.sleep(7000);
+        Purchase_Price.sendKeys(amt);
         WebElement inputElement = getDriver().findElement(By.xpath("//input[@id='purchasePrice']"));
         String inputValue = inputElement.getAttribute("value");
-        System.out.println("Input field value: " + inputValue);
+        inputValue=inputValue.replace(",","");
+        assertEquals(inputValue,amt);
         Calculate.click();
+
     }
 
-    public void calulationWindow(){
+    public void validateWindow(){
         waitFor(Calculation_Header).waitUntilVisible();
+    }
 
+    public boolean vehicleRegistraion(){
+        if(registrationStatus.getText().equalsIgnoreCase("Yes"))
+            return true;
+        else
+            return false;
+    }
 
-
-
-
-
+    public String fetch_Amount(){
+        String displayAmount = Entered_Value.getText().substring(1,(Entered_Value.getText().length()-3)).replace(",","");
+        return displayAmount;
     }
 }
