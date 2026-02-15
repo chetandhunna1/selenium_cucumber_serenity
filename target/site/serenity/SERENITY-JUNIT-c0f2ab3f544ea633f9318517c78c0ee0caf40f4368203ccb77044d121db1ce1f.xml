@@ -1,5 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="1" failures="0" name="Webshop Demo" skipped="0" tests="1" time="38.47" timestamp="2026-02-13 09:01:35"><testcase name="Log in to Web shop demo"><error message="Could not instantiate class org.openqa.selenium.chrome.ChromeDriver" type="net.thucydides.core.webdriver.DriverConfigurationError">Could not instantiate class org.openqa.selenium.chrome.ChromeDriver</error><system-err>Could not instantiate class org.openqa.selenium.chrome.ChromeDriver&#13;
-pages.Webshop.Webshop.openPage(Webshop.java:41)&#13;
-steps.webshopSteps.openwebshopPage(webshopSteps.java:15)&#13;
-steps.webshopGlue.i_open_the_webshop_home_page(webshopGlue.java:13)&#13;
-</system-err></testcase></testsuite>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Webshop Demo" skipped="0" tests="1" time="7.23" timestamp="2026-02-15 02:11:41"><testcase name="Log in to Web shop demo"/></testsuite>

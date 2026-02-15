@@ -1,6 +1,9 @@
 C:\Users\cheta\Automation Space\serenity-cucumber-selenium\src\test\java\pages\GoogleHomePage.java
+C:\Users\cheta\Automation Space\serenity-cucumber-selenium\src\test\java\pages\GUIAutomationDemoPage.java
 C:\Users\cheta\Automation Space\serenity-cucumber-selenium\src\test\java\pages\Webshop\Webshop.java
 C:\Users\cheta\Automation Space\serenity-cucumber-selenium\src\test\java\runners\CucumberTestSuite.java
+C:\Users\cheta\Automation Space\serenity-cucumber-selenium\src\test\java\steps\GUIAutomationDemoGlue.java
+C:\Users\cheta\Automation Space\serenity-cucumber-selenium\src\test\java\steps\GUIAutomationDemoSteps.java
 C:\Users\cheta\Automation Space\serenity-cucumber-selenium\src\test\java\steps\SearchStepDefinitions.java
 C:\Users\cheta\Automation Space\serenity-cucumber-selenium\src\test\java\steps\SearchSteps.java
 C:\Users\cheta\Automation Space\serenity-cucumber-selenium\src\test\java\steps\webshopGlue.java

@@ -1,5 +1,6 @@
 Feature: GUI Automation Demonstration
 
+
   Scenario: UI Automation Demonstration Task2
 
     Given I open the NSW motor vehicle stamp duty page

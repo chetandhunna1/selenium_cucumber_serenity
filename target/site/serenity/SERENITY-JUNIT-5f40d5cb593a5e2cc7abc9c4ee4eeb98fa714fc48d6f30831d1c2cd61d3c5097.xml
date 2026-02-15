@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="1" failures="0" name="Google Search" skipped="0" tests="1" time="43.1" timestamp="2026-02-13 09:00:52"><testcase name="Search for Serenity BDD on Google"><error message="After several attempts, could not instantiate new WebDriver instance of type class org.openqa.selenium.chrome.ChromeDriver (Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 142&#10;Current browser version is 144.0.7559.134 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe &#10;Host info: host: 'CD', ip: '192.168.0.7'&#10;Build info: version: '4.28.1', revision: '73f5ad48a2'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: false, browserName: chrome, goog:chromeOptions: {args: [remote-allow-origins=*, --start-maximized], extensions: []}}]}]). See below for more details." type="net.thucydides.core.webdriver.DriverConfigurationError">After several attempts, could not instantiate new WebDriver instance of type class org.openqa.selenium.chrome.ChromeDriver (Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 142
-Current browser version is 144.0.7559.134 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe 
-Host info: host: 'CD', ip: '192.168.0.7'
-Build info: version: '4.28.1', revision: '73f5ad48a2'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: false, browserName: chrome, goog:chromeOptions: {args: [remote-allow-origins=*, --start-maximized], extensions: []}}]}]). See below for more details.</error><system-err>After several attempts, could not instantiate new WebDriver instance of type class org.openqa.selenium.chrome.ChromeDriver (Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 142
-Current browser version is 144.0.7559.134 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe 
-Host info: host: 'CD', ip: '192.168.0.7'
-Build info: version: '4.28.1', revision: '73f5ad48a2'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: false, browserName: chrome, goog:chromeOptions: {args: [remote-allow-origins=*, --start-maximized], extensions: []}}]}]). See below for more details.&#13;
-steps.SearchSteps.openGoogleHomePage(SearchSteps.java:11)&#13;
-steps.SearchStepDefinitions.openHomePage(SearchStepDefinitions.java:21)&#13;
-</system-err></testcase></testsuite>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Google Search" skipped="0" tests="1" time="1.55" timestamp="2026-02-15 02:11:39"><testcase name="Search for Serenity BDD on Google"/></testsuite>

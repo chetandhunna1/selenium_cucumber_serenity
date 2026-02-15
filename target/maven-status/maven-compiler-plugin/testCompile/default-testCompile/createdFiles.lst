@@ -1,7 +1,10 @@
-pages\GoogleHomePage.class
+steps\GUIAutomationDemoGlue.class
 steps\SearchStepDefinitions.class
 steps\webshopGlue.class
-steps\webshopSteps.class
 runners\CucumberTestSuite.class
 steps\SearchSteps.class
+pages\GUIAutomationDemoPage.class
+pages\GoogleHomePage.class
+steps\webshopSteps.class
+steps\GUIAutomationDemoSteps.class
 pages\Webshop\Webshop.class
