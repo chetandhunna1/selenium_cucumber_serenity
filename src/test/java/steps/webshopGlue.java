@@ -2,6 +2,7 @@ package steps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import steps.webshopSteps;
 
 public class webshopGlue {
@@ -22,6 +23,8 @@ public class webshopGlue {
        wsSteps.enterCredentials();
 
     }
+
+
 
 
 }

@@ -30,4 +30,6 @@ public class SearchStepDefinitions {
     public void verifyResults(String term) {
         searchSteps.shouldSeeResults(term);
     }
+
+
 }
