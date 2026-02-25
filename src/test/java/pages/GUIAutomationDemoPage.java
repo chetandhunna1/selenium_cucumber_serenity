@@ -62,6 +62,7 @@ public class GUIAutomationDemoPage extends PageObject {
         inputValue=inputValue.replace(",","");
         assertEquals(inputValue,amt);
         Calculate.click();
+        //Test
 
     }
 

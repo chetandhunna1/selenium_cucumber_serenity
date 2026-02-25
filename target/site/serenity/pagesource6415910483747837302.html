@@ -1,0 +1,640 @@
+<html lang='en'><head><link href='prism/prism.css' rel='stylesheet' /></head><body><script src='prism/prism.js'></script><body><div><pre><code class='language-html'>&lt;html&gt;<br/>
+ &lt;head&gt;<br/>
+  &lt;title&gt;Demo Web Shop&lt;/title&gt;<br/>
+  &lt;meta http-equiv="Content-type" content="text/html;charset=UTF-8"&gt;<br/>
+  &lt;meta name="description" content=""&gt;<br/>
+  &lt;meta name="keywords" content=""&gt;<br/>
+  &lt;meta name="generator" content="nopCommerce"&gt;<br/>
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;<br/>
+  &lt;link href="/Themes/DefaultClean/Content/styles.css" rel="stylesheet" type="text/css"&gt;<br/>
+  &lt;link href="/Themes/DefaultClean/Content/responsive.css" rel="stylesheet" type="text/css"&gt;<br/>
+  &lt;link href="/Content/jquery-ui-themes/smoothness/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"&gt;<br/>
+  &lt;link href="/Plugins/Widgets.NivoSlider/Content/nivoslider/nivo-slider.css" rel="stylesheet" type="text/css"&gt;<br/>
+  &lt;link href="/Plugins/Widgets.NivoSlider/Content/nivoslider/themes/default/default.css" rel="stylesheet" type="text/css"&gt;<br/>
+  &lt;script type="text/javascript" async src="https://ssl.google-analytics.com/ga.js"&gt;&lt;/script&gt;<br/>
+  &lt;script src="/Scripts/jquery-1.10.2.min.js" type="text/javascript"&gt;&lt;/script&gt;<br/>
+  &lt;script src="/Scripts/jquery.validate.min.js" type="text/javascript"&gt;&lt;/script&gt;<br/>
+  &lt;script src="/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"&gt;&lt;/script&gt;<br/>
+  &lt;script src="/Scripts/jquery-ui-1.10.3.custom.min.js" type="text/javascript"&gt;&lt;/script&gt;<br/>
+  &lt;script src="/Scripts/jquery-migrate-1.2.1.min.js" type="text/javascript"&gt;&lt;/script&gt;<br/>
+  &lt;script src="/Scripts/public.common.js" type="text/javascript"&gt;&lt;/script&gt;<br/>
+  &lt;script src="/Scripts/public.ajaxcart.js" type="text/javascript"&gt;&lt;/script&gt;<br/>
+  &lt;script src="/Plugins/Widgets.NivoSlider/Scripts/jquery.nivo.slider.js" type="text/javascript"&gt;&lt;/script&gt;<br/>
+  &lt;link rel="shortcut icon" href="https://demowebshop.tricentis.com/favicon.ico"&gt;&lt;!--Powered by nopCommerce - http://www.nopCommerce.com--&gt; &lt;!--Copyright (c) 2008-2014--&gt;<br/>
+ &lt;/head&gt;<br/>
+ &lt;body style=""&gt;<br/>
+  &lt;div id="dialog-notifications-success" title="Notification" style="display:none;"&gt;<br/>
+  &lt;/div&gt;<br/>
+  &lt;div id="dialog-notifications-error" title="Error" style="display:none;"&gt;<br/>
+  &lt;/div&gt;<br/>
+  &lt;div id="bar-notification" class="bar-notification"&gt;&lt;span class="close" title="Close"&gt;&nbsp;&lt;/span&gt;<br/>
+  &lt;/div&gt;<br/>
+  &lt;div class="master-wrapper-page"&gt;<br/>
+   &lt;div class="master-wrapper-content"&gt;<br/>
+    &lt;script type="text/javascript"&gt;<br/>
+            AjaxCart.init(false, '.header-links .cart-qty', '.header-links .wishlist-qty', '#flyout-cart');<br/>
+        &lt;/script&gt;<br/>
+    &lt;div class="header"&gt;<br/>
+     &lt;div class="header-logo"&gt;&lt;a href="/"&gt; &lt;img title="" alt="Tricentis Demo Web Shop" src="/Themes/DefaultClean/Content/images/logo.png"&gt; &lt;/a&gt;<br/>
+     &lt;/div&gt;<br/>
+     &lt;div class="header-links-wrapper"&gt;<br/>
+      &lt;div class="header-links"&gt;<br/>
+       &lt;ul&gt;<br/>
+        &lt;li&gt;&lt;a href="/register" class="ico-register"&gt;Register&lt;/a&gt;&lt;/li&gt;<br/>
+        &lt;li&gt;&lt;a href="/login" class="ico-login"&gt;Log in&lt;/a&gt;&lt;/li&gt;<br/>
+        &lt;li id="topcartlink"&gt;&lt;a href="/cart" class="ico-cart"&gt; &lt;span class="cart-label"&gt;Shopping cart&lt;/span&gt; &lt;span class="cart-qty"&gt;(0)&lt;/span&gt; &lt;/a&gt;&lt;/li&gt;<br/>
+        &lt;li&gt;&lt;a href="/wishlist" class="ico-wishlist"&gt; &lt;span class="cart-label"&gt;Wishlist&lt;/span&gt; &lt;span class="wishlist-qty"&gt;(0)&lt;/span&gt; &lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;/ul&gt;<br/>
+       &lt;script type="text/javascript"&gt;<br/>
+            $(document).ready(function () {<br/>
+                $('.header').on('mouseenter', '#topcartlink', function () {<br/>
+                    $('#flyout-cart').addClass('active');<br/>
+                });<br/>
+                $('.header').on('mouseleave', '#topcartlink', function () {<br/>
+                    $('#flyout-cart').removeClass('active');<br/>
+                });<br/>
+                $('.header').on('mouseenter', '#flyout-cart', function () {<br/>
+                    $('#flyout-cart').addClass('active');<br/>
+                });<br/>
+                $('.header').on('mouseleave', '#flyout-cart', function () {<br/>
+                    $('#flyout-cart').removeClass('active');<br/>
+                });<br/>
+            });<br/>
+        &lt;/script&gt;<br/>
+      &lt;/div&gt;<br/>
+      &lt;div id="flyout-cart" class="flyout-cart"&gt;<br/>
+       &lt;div class="mini-shopping-cart"&gt;<br/>
+        &lt;div class="count"&gt;<br/>
+         You have no items in your shopping cart.<br/>
+        &lt;/div&gt;<br/>
+       &lt;/div&gt;<br/>
+      &lt;/div&gt;<br/>
+     &lt;/div&gt;<br/>
+     &lt;div class="search-box"&gt;<br/>
+      &lt;form action="/search" method="get" onsubmit="return check_small_search_form()" novalidate&gt;&lt;span role="status" aria-live="polite" class="ui-helper-hidden-accessible"&gt;&lt;/span&gt;&lt;input type="text" class="search-box-text ui-autocomplete-input" id="small-searchterms" autocomplete="off" value="Search store" name="q"&gt; &lt;input type="submit" class="button-1 search-box-button" value="Search"&gt;<br/>
+       &lt;script type="text/javascript"&gt;<br/>
+        $(document).ready(function() {<br/>
+            $("#small-searchterms").focus(function() {<br/>
+                if (this.value == 'Search store') {<br/>
+                    this.value = '';<br/>
+                }<br/>
+            });<br/>
+<br/>
+            $("#small-searchterms").blur(function() {<br/>
+                if (this.value == '') {<br/>
+                    this.value = 'Search store';<br/>
+                }<br/>
+            });<br/>
+        });<br/>
+<br/>
+        function check_small_search_form() {<br/>
+            var search_terms = $("#small-searchterms");<br/>
+            if (search_terms.val() == "" || search_terms.val() == "Search store") {<br/>
+                alert('Please enter some search keyword');<br/>
+                search_terms.focus();<br/>
+                return false;<br/>
+            }<br/>
+            return true;<br/>
+        }<br/>
+    &lt;/script&gt;<br/>
+       &lt;script type="text/javascript"&gt;<br/>
+                $(function() {<br/>
+                    $('#small-searchterms').autocomplete({<br/>
+                            delay: 500,<br/>
+                            minLength: 3,<br/>
+                            source: '/catalog/searchtermautocomplete',<br/>
+                            select: function(event, ui) {<br/>
+                                $("#small-searchterms").val(ui.item.label);<br/>
+                                setLocation(ui.item.producturl);<br/>
+                                return false;<br/>
+                            }<br/>
+                        })<br/>
+                        .data("ui-autocomplete")._renderItem = function(ul, item) {<br/>
+                            var t = item.label;<br/>
+                            //html encode<br/>
+                            t = htmlEncode(t);<br/>
+                            return $("&lt;li&gt;&lt;/li&gt;")<br/>
+                                .data("item.autocomplete", item)<br/>
+                                .append("&lt;a&gt;" + t + "&lt;/a&gt;")<br/>
+                            .appendTo(ul);<br/>
+                    };<br/>
+                });<br/>
+            &lt;/script&gt;<br/>
+      &lt;/form&gt;<br/>
+     &lt;/div&gt;<br/>
+     &lt;div class="header-selectors-wrapper"&gt;<br/>
+      &lt;div class="tax-display-type-selector"&gt;<br/>
+      &lt;/div&gt;<br/>
+      &lt;div class="currency-selector"&gt;<br/>
+      &lt;/div&gt;<br/>
+      &lt;div class="language-selector"&gt;<br/>
+      &lt;/div&gt;<br/>
+     &lt;/div&gt;<br/>
+    &lt;/div&gt;<br/>
+    &lt;div class="header-menu"&gt;<br/>
+     &lt;ul class="top-menu"&gt;<br/>
+      &lt;li&gt;&lt;a href="/books"&gt;Books &lt;/a&gt;<br/>
+       &lt;div class="top-menu-triangle"&gt;&lt;/div&gt;&lt;/li&gt;<br/>
+      &lt;li&gt;&lt;a href="/computers"&gt;Computers &lt;/a&gt;<br/>
+       &lt;div class="top-menu-triangle"&gt;&lt;/div&gt;<br/>
+       &lt;ul class="sublist firstLevel"&gt;<br/>
+        &lt;li&gt;&lt;a href="/desktops"&gt;Desktops &lt;/a&gt;&lt;/li&gt;<br/>
+        &lt;li&gt;&lt;a href="/notebooks"&gt;Notebooks &lt;/a&gt;&lt;/li&gt;<br/>
+        &lt;li&gt;&lt;a href="/accessories"&gt;Accessories &lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;/ul&gt;&lt;/li&gt;<br/>
+      &lt;li&gt;&lt;a href="/electronics"&gt;Electronics &lt;/a&gt;<br/>
+       &lt;div class="top-menu-triangle"&gt;&lt;/div&gt;<br/>
+       &lt;ul class="sublist firstLevel"&gt;<br/>
+        &lt;li&gt;&lt;a href="/camera-photo"&gt;Camera, photo &lt;/a&gt;&lt;/li&gt;<br/>
+        &lt;li&gt;&lt;a href="/cell-phones"&gt;Cell phones &lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;/ul&gt;&lt;/li&gt;<br/>
+      &lt;li&gt;&lt;a href="/apparel-shoes"&gt;Apparel &amp; Shoes &lt;/a&gt;<br/>
+       &lt;div class="top-menu-triangle"&gt;&lt;/div&gt;&lt;/li&gt;<br/>
+      &lt;li&gt;&lt;a href="/digital-downloads"&gt;Digital downloads &lt;/a&gt;<br/>
+       &lt;div class="top-menu-triangle"&gt;&lt;/div&gt;&lt;/li&gt;<br/>
+      &lt;li&gt;&lt;a href="/jewelry"&gt;Jewelry &lt;/a&gt;<br/>
+       &lt;div class="top-menu-triangle"&gt;&lt;/div&gt;&lt;/li&gt;<br/>
+      &lt;li&gt;&lt;a href="/gift-cards"&gt;Gift Cards &lt;/a&gt;<br/>
+       &lt;div class="top-menu-triangle"&gt;&lt;/div&gt;&lt;/li&gt;<br/>
+     &lt;/ul&gt;<br/>
+     &lt;script type="text/javascript"&gt;<br/>
+    $('li', '.top-menu').on('mouseenter', function () {<br/>
+        $('a', $(this)).first().addClass('hover');<br/>
+        if (!$(this).parent().hasClass('top-menu')) {<br/>
+            var width = $(this).innerWidth();<br/>
+            $('.sublist', $(this)).first().css('left', width + 15);<br/>
+        }<br/>
+        $('.sublist', $(this)).first().addClass('active');<br/>
+        $('.top-menu-triangle', $(this)).addClass('active');<br/>
+    });<br/>
+<br/>
+    $('li', '.top-menu').on('mouseleave', function () {<br/>
+        $('a', $(this)).first().removeClass('hover');<br/>
+        $('.sublist', $(this)).first().removeClass('active');<br/>
+        $('.top-menu-triangle', $(this)).removeClass('active');<br/>
+    });<br/>
+<br/>
+&lt;/script&gt;<br/>
+     &lt;div id="mob-menu-button"&gt;&lt;a href=""&gt; &lt;span class="icon"&gt;&lt;span class="line"&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;/span&gt;&lt;/span&gt; &lt;span&gt;Categories&lt;/span&gt; &lt;/a&gt;<br/>
+     &lt;/div&gt;<br/>
+     &lt;ul class="mob-top-menu"&gt;<br/>
+      &lt;li&gt;&lt;a href="/books"&gt;Books &lt;/a&gt;<br/>
+       &lt;div class="top-menu-triangle"&gt;&lt;/div&gt;&lt;/li&gt;<br/>
+      &lt;li&gt;&lt;a href="/computers"&gt;Computers &lt;/a&gt;<br/>
+       &lt;div class="top-menu-triangle"&gt;&lt;/div&gt;&lt;span class="expand"&gt;&nbsp;&lt;/span&gt;<br/>
+       &lt;ul class="sublist firstLevel"&gt;<br/>
+        &lt;li&gt;&lt;a href="/desktops"&gt;Desktops &lt;/a&gt;&lt;/li&gt;<br/>
+        &lt;li&gt;&lt;a href="/notebooks"&gt;Notebooks &lt;/a&gt;&lt;/li&gt;<br/>
+        &lt;li&gt;&lt;a href="/accessories"&gt;Accessories &lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;/ul&gt;&lt;/li&gt;<br/>
+      &lt;li&gt;&lt;a href="/electronics"&gt;Electronics &lt;/a&gt;<br/>
+       &lt;div class="top-menu-triangle"&gt;&lt;/div&gt;&lt;span class="expand"&gt;&nbsp;&lt;/span&gt;<br/>
+       &lt;ul class="sublist firstLevel"&gt;<br/>
+        &lt;li&gt;&lt;a href="/camera-photo"&gt;Camera, photo &lt;/a&gt;&lt;/li&gt;<br/>
+        &lt;li&gt;&lt;a href="/cell-phones"&gt;Cell phones &lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;/ul&gt;&lt;/li&gt;<br/>
+      &lt;li&gt;&lt;a href="/apparel-shoes"&gt;Apparel &amp; Shoes &lt;/a&gt;<br/>
+       &lt;div class="top-menu-triangle"&gt;&lt;/div&gt;&lt;/li&gt;<br/>
+      &lt;li&gt;&lt;a href="/digital-downloads"&gt;Digital downloads &lt;/a&gt;<br/>
+       &lt;div class="top-menu-triangle"&gt;&lt;/div&gt;&lt;/li&gt;<br/>
+      &lt;li&gt;&lt;a href="/jewelry"&gt;Jewelry &lt;/a&gt;<br/>
+       &lt;div class="top-menu-triangle"&gt;&lt;/div&gt;&lt;/li&gt;<br/>
+      &lt;li&gt;&lt;a href="/gift-cards"&gt;Gift Cards &lt;/a&gt;<br/>
+       &lt;div class="top-menu-triangle"&gt;&lt;/div&gt;&lt;/li&gt;<br/>
+     &lt;/ul&gt;<br/>
+     &lt;script type="text/javascript"&gt;<br/>
+        $('a', $('#mob-menu-button')).toggle(function() {<br/>
+                $('.mob-top-menu').addClass('show');<br/>
+            },<br/>
+            function() {<br/>
+                $('.mob-top-menu').removeClass('show');<br/>
+            }<br/>
+        );<br/>
+<br/>
+        $(function($) {<br/>
+            $('.mob-top-menu .expand').click(function() {<br/>
+                var parent = $(this).parent();<br/>
+                if (parent.hasClass('active')) {<br/>
+                    $(".sublist:first", parent).hide(300);<br/>
+                    parent.removeClass('active');<br/>
+                } else {<br/>
+                    $(".sublist:first", parent).show(300);<br/>
+                    parent.addClass('active');<br/>
+                }<br/>
+            });<br/>
+        });<br/>
+    &lt;/script&gt;<br/>
+    &lt;/div&gt;<br/>
+    &lt;div class="ajax-loading-block-window" style="display: none"&gt;<br/>
+     &lt;div class="loading-image"&gt;<br/>
+     &lt;/div&gt;<br/>
+    &lt;/div&gt;<br/>
+    &lt;div class="master-wrapper-main"&gt;<br/>
+     &lt;div class="leftside-3"&gt;<br/>
+      &lt;div class="block block-category-navigation"&gt;<br/>
+       &lt;div class="title"&gt;&lt;strong&gt;Categories&lt;/strong&gt;<br/>
+       &lt;/div&gt;<br/>
+       &lt;div class="listbox"&gt;<br/>
+        &lt;ul class="list"&gt;<br/>
+         &lt;li class="inactive"&gt;&lt;a href="/books"&gt;Books &lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li class="inactive"&gt;&lt;a href="/computers"&gt;Computers &lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li class="inactive"&gt;&lt;a href="/electronics"&gt;Electronics &lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li class="inactive"&gt;&lt;a href="/apparel-shoes"&gt;Apparel &amp; Shoes &lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li class="inactive"&gt;&lt;a href="/digital-downloads"&gt;Digital downloads &lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li class="inactive"&gt;&lt;a href="/jewelry"&gt;Jewelry &lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;li class="inactive"&gt;&lt;a href="/gift-cards"&gt;Gift Cards &lt;/a&gt;&lt;/li&gt;<br/>
+        &lt;/ul&gt;<br/>
+       &lt;/div&gt;<br/>
+      &lt;/div&gt;<br/>
+      &lt;div class="block block-manufacturer-navigation"&gt;<br/>
+       &lt;div class="title"&gt;&lt;strong&gt;Manufacturers&lt;/strong&gt;<br/>
+       &lt;/div&gt;<br/>
+       &lt;div class="listbox"&gt;<br/>
+        &lt;ul class="list"&gt;<br/>
+         &lt;li class="inactive"&gt;&lt;a href="/tricentis"&gt;Tricentis&lt;/a&gt;&lt;/li&gt;<br/>
+        &lt;/ul&gt;<br/>
+       &lt;/div&gt;<br/>
+      &lt;/div&gt;<br/>
+      &lt;div class="block block-popular-tags"&gt;<br/>
+       &lt;div class="title"&gt;&lt;strong&gt;Popular tags&lt;/strong&gt;<br/>
+       &lt;/div&gt;<br/>
+       &lt;div class="listbox"&gt;<br/>
+        &lt;div class="tags"&gt;<br/>
+         &lt;ul&gt;<br/>
+          &lt;li&gt;&lt;a href="/producttag/4/apparel" style="font-size:100%;"&gt;apparel&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;li&gt;&lt;a href="/producttag/8/awesome" style="font-size:150%;"&gt;awesome&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;li&gt;&lt;a href="/producttag/10/book" style="font-size:90%;"&gt;book&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;li&gt;&lt;a href="/producttag/13/camera" style="font-size:85%;"&gt;camera&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;li&gt;&lt;a href="/producttag/12/cell" style="font-size:85%;"&gt;cell&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;li&gt;&lt;a href="/producttag/9/compact" style="font-size:85%;"&gt;compact&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;li&gt;&lt;a href="/producttag/6/computer" style="font-size:100%;"&gt;computer&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;li&gt;&lt;a href="/producttag/3/cool" style="font-size:120%;"&gt;cool&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;li&gt;&lt;a href="/producttag/16/digital" style="font-size:85%;"&gt;digital&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;li&gt;&lt;a href="/producttag/14/jeans" style="font-size:85%;"&gt;jeans&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;li&gt;&lt;a href="/producttag/11/jewelry" style="font-size:85%;"&gt;jewelry&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;li&gt;&lt;a href="/producttag/1/nice" style="font-size:90%;"&gt;nice&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;li&gt;&lt;a href="/producttag/5/shirt" style="font-size:85%;"&gt;shirt&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;li&gt;&lt;a href="/producttag/7/shoes" style="font-size:85%;"&gt;shoes&lt;/a&gt;&lt;/li&gt;<br/>
+          &lt;li&gt;&lt;a href="/producttag/19/tcp" style="font-size:90%;"&gt;TCP&lt;/a&gt;&lt;/li&gt;<br/>
+         &lt;/ul&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;div class="view-all"&gt;&lt;a href="/producttag/all"&gt;View all&lt;/a&gt;<br/>
+        &lt;/div&gt;<br/>
+       &lt;/div&gt;<br/>
+      &lt;/div&gt;<br/>
+     &lt;/div&gt;<br/>
+     &lt;div class="rightside-3"&gt;<br/>
+      &lt;div class="block block-newsletter"&gt;<br/>
+       &lt;div class="title"&gt;&lt;strong&gt;Newsletter&lt;/strong&gt;<br/>
+       &lt;/div&gt;<br/>
+       &lt;div class="listbox"&gt;<br/>
+        &lt;div id="newsletter-subscribe-block" class="newsletter-subscribe-block"&gt;&lt;span&gt;Sign up for our newsletter:&lt;/span&gt;<br/>
+         &lt;div class="newsletter-email"&gt;&lt;input id="newsletter-email" name="NewsletterEmail" type="text" value=""&gt; &lt;span class="field-validation-valid" data-valmsg-for="NewsletterEmail" data-valmsg-replace="true"&gt;&lt;/span&gt;<br/>
+         &lt;/div&gt;<br/>
+         &lt;div class="buttons"&gt;&lt;input type="button" value="Subscribe" id="newsletter-subscribe-button" class="button-1 newsletter-subscribe-button"&gt; &lt;span id="subscribe-loading-progress" style="display: none;" class="please-wait"&gt;Wait...&lt;/span&gt;<br/>
+         &lt;/div&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;div id="newsletter-result-block" class="newsletter-result-block"&gt;<br/>
+        &lt;/div&gt;<br/>
+       &lt;/div&gt;<br/>
+       &lt;script type="text/javascript"&gt;<br/>
+        $(document).ready(function () {<br/>
+            $('#newsletter-subscribe-button').click(function () {<br/>
+                <br/>
+                var email = $("#newsletter-email").val();<br/>
+                var subscribeProgress = $("#subscribe-loading-progress");<br/>
+                subscribeProgress.show();<br/>
+                $.ajax({<br/>
+                    cache: false,<br/>
+                    type: "POST",<br/>
+                    url: "/subscribenewsletter",<br/>
+                    data: { "email": email },<br/>
+                    success: function (data) {<br/>
+                        subscribeProgress.hide();<br/>
+                        $("#newsletter-result-block").html(data.Result);<br/>
+                         if (data.Success) {<br/>
+                            $('#newsletter-subscribe-block').hide();<br/>
+                            $('#newsletter-result-block').show();<br/>
+                         }<br/>
+                         else {<br/>
+                            $('#newsletter-result-block').fadeIn("slow").delay(2000).fadeOut("slow");<br/>
+                         }<br/>
+                    },<br/>
+                    error:function (xhr, ajaxOptions, thrownError){<br/>
+                        alert('Failed to subscribe.');<br/>
+                        subscribeProgress.hide();<br/>
+                    }  <br/>
+                });                <br/>
+                return false;<br/>
+            });<br/>
+        });<br/>
+    &lt;/script&gt;<br/>
+      &lt;/div&gt;<br/>
+      &lt;div class="block block-poll"&gt;<br/>
+       &lt;div class="title"&gt;&lt;strong&gt;Community poll&lt;/strong&gt;<br/>
+       &lt;/div&gt;<br/>
+       &lt;div class="listbox"&gt;<br/>
+        &lt;div class="poll" id="poll-block-1"&gt;&lt;strong class="poll-display-text"&gt;Do you like nopCommerce?&lt;/strong&gt;<br/>
+         &lt;ul class="poll-options"&gt;<br/>
+          &lt;li class="answer"&gt;&lt;input id="pollanswers-1" type="radio" name="pollanswers-1" value="1"&gt; &lt;label for="pollanswers-1"&gt;Excellent&lt;/label&gt;&lt;/li&gt;<br/>
+          &lt;li class="answer"&gt;&lt;input id="pollanswers-2" type="radio" name="pollanswers-1" value="2"&gt; &lt;label for="pollanswers-2"&gt;Good&lt;/label&gt;&lt;/li&gt;<br/>
+          &lt;li class="answer"&gt;&lt;input id="pollanswers-3" type="radio" name="pollanswers-1" value="3"&gt; &lt;label for="pollanswers-3"&gt;Poor&lt;/label&gt;&lt;/li&gt;<br/>
+          &lt;li class="answer"&gt;&lt;input id="pollanswers-4" type="radio" name="pollanswers-1" value="4"&gt; &lt;label for="pollanswers-4"&gt;Very bad&lt;/label&gt;&lt;/li&gt;<br/>
+         &lt;/ul&gt;<br/>
+         &lt;div class="buttons"&gt;&lt;input type="button" value="Vote" id="vote-poll-1" class="button-2 vote-poll-button"&gt; &lt;span id="poll-voting-progress-1" style="display: none;" class="please-wait"&gt;Wait...&lt;/span&gt;<br/>
+         &lt;/div&gt;<br/>
+         &lt;div class="poll-vote-error" id="block-poll-vote-error-1"&gt;<br/>
+         &lt;/div&gt;<br/>
+         &lt;script type="text/javascript"&gt;<br/>
+            $(document).ready(function () {<br/>
+                $('#vote-poll-1').click(function () {<br/>
+                var pollAnswerId = $("input:radio[name=pollanswers-1]:checked").val();<br/>
+                if (typeof (pollAnswerId) == 'undefined') {<br/>
+                    alert('Please select an answer');<br/>
+                }<br/>
+                else {<br/>
+                    var voteProgress = $("#poll-voting-progress-1");<br/>
+                    voteProgress.show();<br/>
+                    $.ajax({<br/>
+                        cache: false,<br/>
+                        type: "POST",<br/>
+                        url: "/poll/vote",<br/>
+                        data: { "pollAnswerId": pollAnswerId },<br/>
+                        success: function (data) {<br/>
+                            voteProgress.hide();<br/>
+<br/>
+                            if (data.error) {<br/>
+                                $("#block-poll-vote-error-1").html(data.error);<br/>
+                                $('#block-poll-vote-error-1').fadeIn("slow").delay(2000).fadeOut("slow");<br/>
+                            }<br/>
+<br/>
+                            if (data.html) {<br/>
+                                $("#poll-block-1").replaceWith(data.html);<br/>
+                            }<br/>
+                        },<br/>
+                        error: function (xhr, ajaxOptions, thrownError) {<br/>
+                            alert('Failed to vote.');<br/>
+                            voteProgress.hide();<br/>
+                        }<br/>
+                    });<br/>
+                }<br/>
+                return false;<br/>
+            });<br/>
+        });<br/>
+        &lt;/script&gt;<br/>
+        &lt;/div&gt;<br/>
+       &lt;/div&gt;<br/>
+      &lt;/div&gt;<br/>
+     &lt;/div&gt;<br/>
+     &lt;div class="center-3"&gt;<br/>
+      &lt;div class="page home-page"&gt;<br/>
+       &lt;div class="page-body"&gt;<br/>
+        &lt;div class="slider-wrapper theme-default"&gt;<br/>
+         &lt;div id="nivo-slider" class="nivoSlider"&gt;&lt;a href="https://www.tricentis.com/speed/" class="nivo-imageLink" style="display: block;"&gt; &lt;img src="https://demowebshop.tricentis.com/content/images/thumbs/0000215.png" data-thumb="https://demowebshop.tricentis.com/content/images/thumbs/0000215.png" data-transition="" alt="" title="Speed | Tricentis" style="display: none;"&gt; &lt;/a&gt; &lt;a href="https://academy.tricentis.com" class="nivo-imageLink" style="display: none;"&gt; &lt;img src="http://demowebshop.tricentis.com/content/images/thumbs/0000240.png" data-thumb="http://demowebshop.tricentis.com/content/images/thumbs/0000240.png" data-transition="" alt="" title="Tricentis Academy" style="display: none;"&gt; &lt;/a&gt; &lt;img class="nivo-main-image" src="https://demowebshop.tricentis.com/content/images/thumbs/0000215.png" style="display: inline;"&gt;<br/>
+          &lt;div class="nivo-caption" style="display: block; opacity: 0.207299;"&gt;<br/>
+           Speed | Tricentis<br/>
+          &lt;/div&gt;<br/>
+          &lt;div class="nivo-directionNav"&gt;<br/>
+           &lt;a class="nivo-prevNav"&gt;Prev&lt;/a&gt;&lt;a class="nivo-nextNav"&gt;Next&lt;/a&gt;<br/>
+          &lt;/div&gt;<br/>
+         &lt;/div&gt;<br/>
+         &lt;div class="nivo-controlNav"&gt;<br/>
+          &lt;a class="nivo-control active" rel="0"&gt;1&lt;/a&gt;&lt;a class="nivo-control" rel="1"&gt;2&lt;/a&gt;<br/>
+         &lt;/div&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;script type="text/javascript"&gt;<br/>
+    $(window).load(function () {<br/>
+        $('#nivo-slider').nivoSlider();<br/>
+    });<br/>
+&lt;/script&gt;<br/>
+        &lt;div class="topic-html-content"&gt;<br/>
+         &lt;div class="topic-html-content-title"&gt;<br/>
+          &lt;h2 class="topic-html-content-header"&gt;Welcome to our store&lt;/h2&gt;<br/>
+         &lt;/div&gt;<br/>
+         &lt;div class="topic-html-content-body"&gt;<br/>
+          &lt;p&gt;Welcome to the new Tricentis store!&lt;/p&gt;<br/>
+          &lt;p&gt;Feel free to shop around and explore everything.&lt;/p&gt;<br/>
+         &lt;/div&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;div class="product-grid home-page-product-grid"&gt;<br/>
+         &lt;div class="title"&gt;&lt;strong&gt;Featured products&lt;/strong&gt;<br/>
+         &lt;/div&gt;<br/>
+         &lt;div class="item-box"&gt;<br/>
+          &lt;div class="product-item" data-productid="2"&gt;<br/>
+           &lt;div class="picture"&gt;&lt;a href="/25-virtual-gift-card" title="Show details for $25 Virtual Gift Card"&gt; &lt;img alt="Picture of $25 Virtual Gift Card" src="https://demowebshop.tricentis.com/content/images/thumbs/0000015_25-virtual-gift-card_125.jpeg" title="Show details for $25 Virtual Gift Card"&gt; &lt;/a&gt;<br/>
+           &lt;/div&gt;<br/>
+           &lt;div class="details"&gt;<br/>
+            &lt;h2 class="product-title"&gt;&lt;a href="/25-virtual-gift-card"&gt;$25 Virtual Gift Card&lt;/a&gt;&lt;/h2&gt;<br/>
+            &lt;div class="product-rating-box" title="821 review(s)"&gt;<br/>
+             &lt;div class="rating"&gt;<br/>
+              &lt;div style="width: 63%"&gt;<br/>
+              &lt;/div&gt;<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+            &lt;div class="description"&gt;<br/>
+             $25 Gift Card. Gift Cards must be redeemed through our site Web site toward the purchase of eligible products.<br/>
+            &lt;/div&gt;<br/>
+            &lt;div class="add-info"&gt;<br/>
+             &lt;div class="prices"&gt;&lt;span class="price actual-price"&gt;25.00&lt;/span&gt;<br/>
+             &lt;/div&gt;<br/>
+             &lt;div class="buttons"&gt;&lt;input type="button" value="Add to cart" class="button-2 product-box-add-to-cart-button" onclick="AjaxCart.addproducttocart_catalog('/addproducttocart/catalog/2/1/1    ');return false;"&gt;<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+           &lt;/div&gt;<br/>
+          &lt;/div&gt;<br/>
+         &lt;/div&gt;<br/>
+         &lt;div class="item-box"&gt;<br/>
+          &lt;div class="product-item" data-productid="31"&gt;<br/>
+           &lt;div class="picture"&gt;&lt;a href="/141-inch-laptop" title="Show details for 14.1-inch Laptop"&gt; &lt;img alt="Picture of 14.1-inch Laptop" src="https://demowebshop.tricentis.com/content/images/thumbs/0000224_141-inch-laptop_125.png" title="Show details for 14.1-inch Laptop"&gt; &lt;/a&gt;<br/>
+           &lt;/div&gt;<br/>
+           &lt;div class="details"&gt;<br/>
+            &lt;h2 class="product-title"&gt;&lt;a href="/141-inch-laptop"&gt;14.1-inch Laptop&lt;/a&gt;&lt;/h2&gt;<br/>
+            &lt;div class="product-rating-box" title="1494 review(s)"&gt;<br/>
+             &lt;div class="rating"&gt;<br/>
+              &lt;div style="width: 72%"&gt;<br/>
+              &lt;/div&gt;<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+            &lt;div class="description"&gt;<br/>
+             Unique Asian-influenced imprint wraps the laptop both inside and out<br/>
+            &lt;/div&gt;<br/>
+            &lt;div class="add-info"&gt;<br/>
+             &lt;div class="prices"&gt;&lt;span class="price actual-price"&gt;1590.00&lt;/span&gt;<br/>
+             &lt;/div&gt;<br/>
+             &lt;div class="buttons"&gt;&lt;input type="button" value="Add to cart" class="button-2 product-box-add-to-cart-button" onclick="AjaxCart.addproducttocart_catalog('/addproducttocart/catalog/31/1/1    ');return false;"&gt;<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+           &lt;/div&gt;<br/>
+          &lt;/div&gt;<br/>
+         &lt;/div&gt;<br/>
+         &lt;div class="item-box"&gt;<br/>
+          &lt;div class="product-item" data-productid="72"&gt;<br/>
+           &lt;div class="picture"&gt;&lt;a href="/build-your-cheap-own-computer" title="Show details for Build your own cheap computer"&gt; &lt;img alt="Picture of Build your own cheap computer" src="https://demowebshop.tricentis.com/content/images/thumbs/0000172_build-your-own-cheap-computer_125.jpeg" title="Show details for Build your own cheap computer"&gt; &lt;/a&gt;<br/>
+           &lt;/div&gt;<br/>
+           &lt;div class="details"&gt;<br/>
+            &lt;h2 class="product-title"&gt;&lt;a href="/build-your-cheap-own-computer"&gt;Build your own cheap computer&lt;/a&gt;&lt;/h2&gt;<br/>
+            &lt;div class="product-rating-box" title="824 review(s)"&gt;<br/>
+             &lt;div class="rating"&gt;<br/>
+              &lt;div style="width: 59%"&gt;<br/>
+              &lt;/div&gt;<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+            &lt;div class="description"&gt;<br/>
+             Build it<br/>
+            &lt;/div&gt;<br/>
+            &lt;div class="add-info"&gt;<br/>
+             &lt;div class="prices"&gt;&lt;span class="price actual-price"&gt;800.00&lt;/span&gt;<br/>
+             &lt;/div&gt;<br/>
+             &lt;div class="buttons"&gt;&lt;input type="button" value="Add to cart" class="button-2 product-box-add-to-cart-button" onclick="AjaxCart.addproducttocart_catalog('/addproducttocart/catalog/72/1/1    ');return false;"&gt;<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+           &lt;/div&gt;<br/>
+          &lt;/div&gt;<br/>
+         &lt;/div&gt;<br/>
+         &lt;div class="item-box"&gt;<br/>
+          &lt;div class="product-item" data-productid="16"&gt;<br/>
+           &lt;div class="picture"&gt;&lt;a href="/build-your-own-computer" title="Show details for Build your own computer"&gt; &lt;img alt="Picture of Build your own computer" src="https://demowebshop.tricentis.com/content/images/thumbs/0000031_build-your-own-computer_125.jpeg" title="Show details for Build your own computer"&gt; &lt;/a&gt;<br/>
+           &lt;/div&gt;<br/>
+           &lt;div class="details"&gt;<br/>
+            &lt;h2 class="product-title"&gt;&lt;a href="/build-your-own-computer"&gt;Build your own computer&lt;/a&gt;&lt;/h2&gt;<br/>
+            &lt;div class="product-rating-box" title="335 review(s)"&gt;<br/>
+             &lt;div class="rating"&gt;<br/>
+              &lt;div style="width: 52%"&gt;<br/>
+              &lt;/div&gt;<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+            &lt;div class="description"&gt;<br/>
+             Build it<br/>
+            &lt;/div&gt;<br/>
+            &lt;div class="add-info"&gt;<br/>
+             &lt;div class="prices"&gt;&lt;span class="price actual-price"&gt;1200.00&lt;/span&gt;<br/>
+             &lt;/div&gt;<br/>
+             &lt;div class="buttons"&gt;&lt;input type="button" value="Add to cart" class="button-2 product-box-add-to-cart-button" onclick="AjaxCart.addproducttocart_catalog('/addproducttocart/catalog/16/1/1    ');return false;"&gt;<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+           &lt;/div&gt;<br/>
+          &lt;/div&gt;<br/>
+         &lt;/div&gt;<br/>
+         &lt;div class="item-box"&gt;<br/>
+          &lt;div class="product-item" data-productid="74"&gt;<br/>
+           &lt;div class="picture"&gt;&lt;a href="/build-your-own-expensive-computer-2" title="Show details for Build your own expensive computer"&gt; &lt;img alt="Picture of Build your own expensive computer" src="https://demowebshop.tricentis.com/content/images/thumbs/0000201_build-your-own-expensive-computer_125.jpeg" title="Show details for Build your own expensive computer"&gt; &lt;/a&gt;<br/>
+           &lt;/div&gt;<br/>
+           &lt;div class="details"&gt;<br/>
+            &lt;h2 class="product-title"&gt;&lt;a href="/build-your-own-expensive-computer-2"&gt;Build your own expensive computer&lt;/a&gt;&lt;/h2&gt;<br/>
+            &lt;div class="product-rating-box" title="425 review(s)"&gt;<br/>
+             &lt;div class="rating"&gt;<br/>
+              &lt;div style="width: 58%"&gt;<br/>
+              &lt;/div&gt;<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+            &lt;div class="description"&gt;<br/>
+             Build it<br/>
+            &lt;/div&gt;<br/>
+            &lt;div class="add-info"&gt;<br/>
+             &lt;div class="prices"&gt;&lt;span class="price actual-price"&gt;1800.00&lt;/span&gt;<br/>
+             &lt;/div&gt;<br/>
+             &lt;div class="buttons"&gt;&lt;input type="button" value="Add to cart" class="button-2 product-box-add-to-cart-button" onclick="AjaxCart.addproducttocart_catalog('/addproducttocart/catalog/74/1/1    ');return false;"&gt;<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+           &lt;/div&gt;<br/>
+          &lt;/div&gt;<br/>
+         &lt;/div&gt;<br/>
+         &lt;div class="item-box"&gt;<br/>
+          &lt;div class="product-item" data-productid="75"&gt;<br/>
+           &lt;div class="picture"&gt;&lt;a href="/simple-computer" title="Show details for Simple Computer"&gt; &lt;img alt="Picture of Simple Computer" src="https://demowebshop.tricentis.com/content/images/thumbs/0000204_simple-computer_125.jpeg" title="Show details for Simple Computer"&gt; &lt;/a&gt;<br/>
+           &lt;/div&gt;<br/>
+           &lt;div class="details"&gt;<br/>
+            &lt;h2 class="product-title"&gt;&lt;a href="/simple-computer"&gt;Simple Computer&lt;/a&gt;&lt;/h2&gt;<br/>
+            &lt;div class="product-rating-box" title="386 review(s)"&gt;<br/>
+             &lt;div class="rating"&gt;<br/>
+              &lt;div style="width: 61%"&gt;<br/>
+              &lt;/div&gt;<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+            &lt;div class="description"&gt;<br/>
+             Build it<br/>
+            &lt;/div&gt;<br/>
+            &lt;div class="add-info"&gt;<br/>
+             &lt;div class="prices"&gt;&lt;span class="price actual-price"&gt;800.00&lt;/span&gt;<br/>
+             &lt;/div&gt;<br/>
+             &lt;div class="buttons"&gt;&lt;input type="button" value="Add to cart" class="button-2 product-box-add-to-cart-button" onclick="AjaxCart.addproducttocart_catalog('/addproducttocart/catalog/75/1/1    ');return false;"&gt;<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+           &lt;/div&gt;<br/>
+          &lt;/div&gt;<br/>
+         &lt;/div&gt;<br/>
+        &lt;/div&gt;<br/>
+       &lt;/div&gt;<br/>
+      &lt;/div&gt;<br/>
+     &lt;/div&gt;<br/>
+    &lt;/div&gt;<br/>
+   &lt;/div&gt;<br/>
+   &lt;div class="footer"&gt;<br/>
+    &lt;div class="footer-menu-wrapper"&gt;<br/>
+     &lt;div class="column information"&gt;<br/>
+      &lt;h3&gt;Information&lt;/h3&gt;<br/>
+      &lt;ul&gt;<br/>
+       &lt;li&gt;&lt;a href="/sitemap"&gt;Sitemap&lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;li&gt;&lt;a href="/shipping-returns"&gt;Shipping &amp; Returns&lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;li&gt;&lt;a href="/privacy-policy"&gt;Privacy Notice&lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;li&gt;&lt;a href="/conditions-of-use"&gt;Conditions of Use&lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;li&gt;&lt;a href="/about-us"&gt;About us&lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;li&gt;&lt;a href="/contactus"&gt;Contact us&lt;/a&gt;&lt;/li&gt;<br/>
+      &lt;/ul&gt;<br/>
+     &lt;/div&gt;<br/>
+     &lt;div class="column customer-service"&gt;<br/>
+      &lt;h3&gt;Customer service&lt;/h3&gt;<br/>
+      &lt;ul&gt;<br/>
+       &lt;li&gt;&lt;a href="/search"&gt;Search&lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;li&gt;&lt;a href="/news"&gt;News&lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;li&gt;&lt;a href="/blog"&gt;Blog&lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;li&gt;&lt;a href="/recentlyviewedproducts"&gt;Recently viewed products&lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;li&gt;&lt;a href="/compareproducts"&gt;Compare products list&lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;li&gt;&lt;a href="/newproducts"&gt;New products&lt;/a&gt;&lt;/li&gt;<br/>
+      &lt;/ul&gt;<br/>
+     &lt;/div&gt;<br/>
+     &lt;div class="column my-account"&gt;<br/>
+      &lt;h3&gt;My account&lt;/h3&gt;<br/>
+      &lt;ul&gt;<br/>
+       &lt;li&gt;&lt;a href="/customer/info" class="account"&gt;My account&lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;li&gt;&lt;a href="/customer/orders"&gt;Orders&lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;li&gt;&lt;a href="/customer/addresses" class=""&gt;Addresses&lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;li&gt;&lt;a href="/cart" class="ico-cart"&gt;Shopping cart&lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;li&gt;&lt;a href="/wishlist" class="ico-wishlist"&gt;Wishlist&lt;/a&gt;&lt;/li&gt;<br/>
+      &lt;/ul&gt;<br/>
+     &lt;/div&gt;<br/>
+     &lt;div class="column follow-us"&gt;<br/>
+      &lt;h3&gt;Follow us&lt;/h3&gt;<br/>
+      &lt;ul&gt;<br/>
+       &lt;li class="facebook"&gt;&lt;a href="http://www.facebook.com/nopCommerce" target="_blank"&gt;Facebook&lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;li class="twitter"&gt;&lt;a href="https://twitter.com/nopCommerce" target="_blank"&gt;Twitter&lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;li class="rss"&gt;&lt;a href="/news/rss/1"&gt;RSS&lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;li class="youtube"&gt;&lt;a href="http://www.youtube.com/user/nopCommerce" target="_blank"&gt;YouTube&lt;/a&gt;&lt;/li&gt;<br/>
+       &lt;li class="google-plus"&gt;&lt;a href="https://plus.google.com/+nopcommerce" target="_blank"&gt;Google+&lt;/a&gt;&lt;/li&gt;<br/>
+      &lt;/ul&gt;<br/>
+     &lt;/div&gt;<br/>
+    &lt;/div&gt;<br/>
+    &lt;div class="footer-poweredby"&gt;<br/>
+     Powered by &lt;a href="http://www.nopcommerce.com/"&gt;nopCommerce&lt;/a&gt;<br/>
+    &lt;/div&gt;<br/>
+    &lt;div class="footer-disclaimer"&gt;<br/>
+     Copyright © 2026 Tricentis Demo Web Shop. All rights reserved.<br/>
+    &lt;/div&gt;<br/>
+    &lt;div class="footer-store-theme"&gt;<br/>
+    &lt;/div&gt;<br/>
+   &lt;/div&gt;<br/>
+  &lt;/div&gt;&lt;!-- Google code for Analytics tracking --&gt;<br/>
+  &lt;script type="text/javascript"&gt;<br/>
+var _gaq = _gaq || [];<br/>
+_gaq.push(['_setAccount', 'UA-6574346-11']);<br/>
+_gaq.push(['_trackPageview']);<br/>
+<br/>
+(function() {<br/>
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;<br/>
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';<br/>
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);<br/>
+})();<br/>
+&lt;/script&gt;<br/>
+  &lt;ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" style="display: none;"&gt;&lt;/ul&gt;<br/>
+ &lt;/body&gt;<br/>
+&lt;/html&gt;</code></pre></div></body></html>

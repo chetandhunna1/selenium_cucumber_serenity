@@ -1,5 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="1" failures="0" name="GUI Automation Demonstration" skipped="0" tests="1" time="8.29" timestamp="2026-02-15 07:46:48"><testcase name="UI Automation Demonstration Task2"><error message="For input string: &quot;45,000.00&quot;" type="java.lang.NumberFormatException">For input string: "45,000.00"</error><system-err>For input string: "45,000.00"&#13;
-pages.GUIAutomationDemoPage.fetch_Amount(GUIAutomationDemoPage.java:79)&#13;
-steps.GUIAutomationDemoGlue.user_assert_the_contents_of_the_popup_window(GUIAutomationDemoGlue.java:36)&#13;
-✽.User Assert the contents of the popup window(file:///C:/Users/cheta/Automation%20Space/serenity-cucumber-selenium/src/test/resources/features/search/GUIAutomationDemo.feature:9)&#13;
-</system-err></testcase></testsuite>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="GUI Automation Demonstration" skipped="0" tests="1" time="12.54" timestamp="2026-02-22 01:20:31"><testcase name="UI Automation Demonstration Task2"/></testsuite>
